@@ -1,0 +1,25 @@
+name: Multi-OS Testing - Laksh
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Testing on Ubuntu..."
+      - run: uname -a
+      - run: echo "Ubuntu test by Laksh" > test-ubuntu.txt
+      - run: cat test-ubuntu.txt
+      - run: echo "Ubuntu tests completed"
+
+  test-windows:
+    runs-on: windows-latest
+    steps:
+      - run: echo "Testing on Windows..."
+      - run: systeminfo
+      - run: echo "Windows test by Laksh" > test-windows.txt
+      - run: type test-windows.txt
+      - run: echo "Windows tests completed"
